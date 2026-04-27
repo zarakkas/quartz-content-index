@@ -1,12 +1,16 @@
 import path from 'path';
 import fs from 'fs/promises';
-import { joinSegments } from '@quartz-community/types';
 
 var __defProp = Object.defineProperty;
 var __export = (target, all2) => {
   for (var name in all2)
     __defProp(target, name, { get: all2[name], enumerable: true });
 };
+
+// node_modules/@quartz-community/types/dist/index.js
+function joinSegments(...segments) {
+  return segments.filter((segment) => segment.length > 0).join("/").replace(/\/+/g, "/");
+}
 
 // node_modules/comma-separated-tokens/index.js
 function stringify(values, options) {
