@@ -27,6 +27,7 @@ export type ContentDetails = {
   richContent?: string;
   date?: Date;
   description?: string;
+  order?: number;
 };
 
 interface Options {
@@ -155,6 +156,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
               : undefined,
           date: date,
           description: (data.description as string | undefined) ?? "",
+          order: frontmatter.order as number | undefined,
         });
       }
     }

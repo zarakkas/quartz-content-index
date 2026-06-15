@@ -2330,7 +2330,8 @@ var ContentIndex = (opts) => {
           content: text2 ?? "",
           richContent: options.rssFullHtml && !isEncrypted ? escapeHTML(toHtml(tree, { allowDangerousHtml: true })) : void 0,
           date,
-          description: data.description ?? ""
+          description: data.description ?? "",
+          order: frontmatter.order
         });
       }
     }
